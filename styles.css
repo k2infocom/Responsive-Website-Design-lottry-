@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    list-style: none;
+    text-decoration: none;
+
+    font-family: 'Josefin Sans';
+}
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    max-height: 100vh;
+    overflow-x: hidden;
+    background-color: #0F0233;
+}
+
+.Section{
+    display: flex;
+    flex-direction: column;
+    min-height: 98vh;
+    z-index: 1;
+    background-image: -webkit-linear-gradient(90deg, rgb(232, 42, 122) 0%, rgb(54, 3, 84) 100%);
+    position: relative;
+    z-index: 1;
+}
+
+.Section::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background: url(images/hero-building.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    z-index: -1;
+}
+
+button{
+    background: transparent;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 50px;
+    width: 150px;
+    justify-content: center;
+    color: #fff;
+    border: none;
+    background-image: -webkit-linear-gradient(86deg, rgb(236, 3, 139) 0%, rgb(251, 100, 104) 44%, rgb(251, 185, 54) 100%);
+    background-size: 200%;
+    transition: .96s;
+    cursor: pointer;
+}
+
+button:hover{
+    background-size: 100%;
+}
+
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 12%;
+    gap: 20px;
+    position: relative;
+}
+
+.logo img{
+    width: 100%;
+}
+
+ul{
+    display: flex;
+    gap: 20px;
+}
+
+ul li {
+    margin: 0 12px;
+    font-weight: 500;
+}
+
+ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    color: #ffff;
+}
+
+ul li a::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    background-color: #fff;
+    top: 100%;  
+    left: 0%;   
+    border-radius:5px;
+    transition: all ease 0.5s;
+}
+
+ul li a:hover::after{
+    width: 100%;    
+}
+
+nav button{
+    background-image: -webkit-linear-gradient(7deg, rgb(236, 19, 121) 0%, rgb(108, 0, 146) 100%);
+}
+
+.bars {
+    font-size: 25px;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    display: none;
+}
+
+.bars i{
+    color: #fff;
+}
+
+.hero{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 130px 12%;
+    position: relative;
+}
+
+@keyframes Anim_show {
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.text h1{
+    font-size: 7rem;
+    line-height: 85px;
+    font-weight:  700;
+    padding: 30px 0px;
+    color: #fff;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: Anim_show 1s 0.5s ease-in-out forwards;
+}
+
+.text h6{
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    color: #ffd561;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: Anim_show 1s ease-in-out forwards;
+}
+
+.text p{
+    color: #ffffff;
+    font-size: 24px;
+    width: 80%;
+    margin: 10px 0;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: Anim_show 1s 1.2s ease-in-out forwards;
+}
+
+.page{
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.page img{
+    width: 100%;
+}
+
+
+.page #CarImg{
+    transform:  translateX(500px);
+    animation: Anim_scale 1s forwards linear;
+}
+
+@keyframes Anim_scale {
+    0% {
+        width:0%; 
+    }
+    100%{
+        width:100% ;
+        transform:  translateX(0px);  
+    }
+
+}
+
+.page #lights{
+    position: absolute;
+    top: -50%;
+    left: 0;
+    z-index: -1;
+}
+.page #Rays{
+    position: absolute;
+    top: -20%;
+    left: 0;
+    z-index: -1;
+    animation: Anim_Rotate 20s infinite linear;
+}
+.page #Stars{
+    position: absolute;
+    top: -20%;
+    left: 0;
+    /* z-index: -1; */
+    animation: Anim_Fade 2s infinite linear;
+}
+.page #Shaodw{
+    position: absolute;
+    top: 25%;
+    left: -10%;
+    z-index: -1;
+}
+
+
+@keyframes Anim_Rotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes Anim_Fade {
+    0%{
+        opacity: 0.6;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.8;
+    }
+}
+
+
+.hero-btns{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: Anim_show 1s 2s ease-in-out forwards;
+}
+
+.hero-btns #b1 {
+    font-size: 15px;
+    width: 170px;
+}
+
+.hero-btns #b2 {
+    background-image: none;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    font-size: 30px;
+}
+
+.hero-btns #b2::after{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    width: 57px;
+    height: 54px;
+    background-image: linear-gradient(45deg, rgb(215, 61, 245) 0%, rgb(143, 61, 245) 100%);
+    opacity: 0.6;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 27% 33% 15% 48% / 21% 47% 35% 51%;
+    animation: flowRubber 5s infinite linear;
+    animation-delay: 0.5s;
+}
+
+.hero-btns #b2::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    width: 73px;
+    height: 74px;
+    background-image: linear-gradient(45deg, rgb(215, 61, 245) 0%, rgb(143, 61, 245) 100%);
+    opacity: 0.4;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 20% 38% 25% 53% / 12% 47% 35% 51%;
+    animation: flowRubber 5s infinite linear;
+}
+
+@keyframes flowRubber {
+    0% {
+        border-radius: 20% 38% 25% 53% / 12% 47% 35% 51%;       
+    }  
+    25% {
+        border-radius: 84% 43% 59% 45% / 62% 38% 67% 49%;      
+    }
+    50% {
+        border-radius: 69% 70% 59% 86% / 80% 77% 67% 49%;     
+    }
+    75% {
+        border-radius: 35% 70% 24% 94% / 64% 61% 67% 49%;     
+   }
+    100% {
+        border-radius: 20% 38% 25% 53% / 12% 47% 35% 51%; 
+    }
+}
+
+.social-icon{
+    position: absolute;
+    top: 100%;
+    left: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px
+
+}
+.icon{
+    display: flex;
+    gap: 10px;
+}
+.icon i{
+    border: 1px solid #000;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 25px;
+}
+.bars{
+    display: none;
+}
+
+@media(max-width:1600px){
+    .Section {
+        min-height: 100vh;
+    }
+    .hero {
+        padding: 100px 12%;
+    }
+}
+
+@media(max-width:1400px){
+
+    .text , .page{
+        width: 50%;
+    }
+}
+@media(max-width:1200px){
+    .hero {
+        padding: 76px 8%;
+    }
+
+    .text h1 {
+        font-size: 6rem;
+        line-height: 75px;
+    }
+
+    .Section::after{
+        width: 100%;
+    }
+}
+
+
+
+@media(max-width:900px){
+    .bars {
+        font-size: 25px;
+        border: 1px solid #fff;
+        padding: 8px 10px;
+        display: block;
+    }
+    .bars i{
+        color: #fff;
+    }
+    ul{
+        position: absolute;
+        flex-direction: column;
+        top: 100%;
+        left: -100%;
+        background-color: #fff;
+        width: 100%;
+        padding: 50px 8%;
+        gap: 60px;
+        transition: all 0.5s;
+        border-radius: 5px;
+        z-index: 999;
+        align-items: center;
+    }
+    ul li a{
+        color: #000;
+    }
+    .ShowMenu{
+        left: 0%;
+        opacity: 1 !important;
+    } 
+    .hero{
+        display: flex;
+        flex-direction: column;
+        padding: 60px 8%;
+    }
+
+    .text{
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        margin-top: 40px;
+    }
+    .page{
+        width: 80%;
+        display: flex;
+        margin-top: 80px;
+    }
+    .text h1 {
+        font-size: 8rem;
+    }
+}
+@media(max-width:768px){
+    .text h1{
+        font-size: 5rem;
+        padding: 15px 0;
+    }
+
+    .text p {
+        font-size: 26px;
+        width: 100%;
+    }
+}
